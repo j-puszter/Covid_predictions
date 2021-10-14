@@ -25,7 +25,9 @@ df['PCR%'] = df.apply(lambda row: calculate_percentage(row["Dennych.PCR.prirastk
 df['Ag%'] = df.apply(lambda row: calculate_percentage(row["AgPosit"],
                                                            row["AgTests"]), axis=1)
 
-fig = ps.make_subplots(rows=2, cols=1)
+fig = ps.make_subplots(rows=2, cols=1,
+                       subplot_titles=("Denný počet vykonaných testov na Slovensku",
+                                       "Denné percento pozitívnych vzoriek na Slovensku"))
 
 
 fig.add_trace(go.Scatter(
@@ -54,7 +56,7 @@ fig.add_trace(go.Scatter(
     mode="lines"
 ), row=2, col=1)
 
-fig.update_layout(xaxis_title="Datum", yaxis_title="Pocet testovanych")
-fig["layout"]["yaxis2"]["title"] = "Percento pozitivnych"
-fig["layout"]["xaxis2"]["title"] = "Datum"
+fig.update_layout(xaxis_title="Dátum", yaxis_title="Počet testovaných")
+fig["layout"]["yaxis2"]["title"] = "Percento pozitívnych"
+fig["layout"]["xaxis2"]["title"] = "Dátum"
 fig.show()
