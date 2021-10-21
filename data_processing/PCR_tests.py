@@ -2,6 +2,10 @@ import pandas as pd
 
 def main():
     pcr = pcr_tests()
+    make_csv(pcr, "PcrTests")
+
+def make_csv(df, filename):
+    df.to_csv(filename + ".csv", sep = ';', index = False)
 
 def pcr_tests():
     url = 'https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv'
