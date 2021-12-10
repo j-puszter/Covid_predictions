@@ -1,0 +1,14 @@
+1) predikcia pozit PCR z (PCR, PCR%, Ag, Ag%)
+2) predikcia umrti z umrti
+3) predikcia umrti z (umrti, PCR, PCR%, Ag, Ag%)
+4) predikcia pozit Ag z (PCR, PCR%, Ag, Ag%)
+5) graf celkovych hospitalizacii
+6) graf celkovych UPV- umele plucne ventilacie
+7) predikcia kompletne zaockovanych (2 davky) z kompletne zaockovanych
+
+- pouzivat MA7
+- najlepsi model deploy
+- predikovat
+- zakreslit graf, kde bude farebne odlisena predikcia ( v ulohach kde je predikcia)
+
+Github IZA: daily_stats, umrtia, vakcinacie
