@@ -27,9 +27,14 @@ resp = requests.post(scoring_uri, input_data, headers=headers)
 print(resp.text)
 
 df = pd.read_csv("AgPCRTestsMean7.csv", sep = ',')
-fig = go.Figure([go.Scatter(x=df['Datum'], y=df['AgPosit'], name = 'AgPosit', mode = 'lines'), 
-                go.Scatter(x = df_panda['Datum'], 
-                            y = ['2440.9276650425995', '2451.0142106654635', '2472.3669651777345', '2476.426576545583', '2478.2253242881775', '2483.3577488107994', '2490.3414989838575'],
-                            name = 'AgPosit_predicted', mode = 'lines')])
+df_all = df[df['Datum'] < '2021-12']
+df_real = df[df['Datum'] >= '2021-11-30']
+df_real = df_real[df_real['Datum'] <= '2021-12-07']
+df_dates = pd.date_range(start='2021-11-30', end='2021-12-07')
+fig = go.Figure([go.Scatter(x=df_all['Datum'], y=df_all['AgPosit'], name = 'AgPosit', mode = 'lines'), 
+                go.Scatter(x = df_dates,
+                            y = [df_all['AgPosit'].iloc[-1],'2440.9276650425995', '2451.0142106654635', '2472.3669651777345', '2476.426576545583', '2478.2253242881775', '2483.3577488107994', '2490.3414989838575'],
+                            name = 'AgPosit_predicted', mode = 'lines'),
+                go.Scatter(x=df_real['Datum'], y=df_real['AgPosit'], name = 'AgPosit_real', mode = 'lines')])
 fig.show()
 fig.write_html("prediction.html")

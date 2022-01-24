@@ -20,7 +20,7 @@ def get_AgTests():
     
     tests.rename(columns={"Dennych.PCR.prirastkov": "PCRPosit"}, inplace=True)
     tests = tests[tests['Datum'] >= '2020-10-11']
-    tests = tests[tests['Datum'] < '2021-12']
+    # tests = tests[tests['Datum'] < '2021-12']
     tests.AgPosit = tests.AgPosit.astype(int)
     tests.set_index("Datum")
     tests = tests.rolling(7, min_periods=1, on='Datum').mean().round(2)
