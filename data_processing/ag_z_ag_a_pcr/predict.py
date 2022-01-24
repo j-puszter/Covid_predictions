@@ -8,6 +8,8 @@ import json
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from sklearn.metrics import mean_squared_error
+from math import sqrt
 
 ## Post requests to API end-point to get predictions 
 scoring_uri =  'http://bf0aee8b-b33a-476d-9c89-73b2e2bfd27c.westeurope.azurecontainer.io/score'
@@ -38,3 +40,8 @@ fig = go.Figure([go.Scatter(x=df_all['Datum'], y=df_all['AgPosit'], name = 'AgPo
                 go.Scatter(x=df_real['Datum'], y=df_real['AgPosit'], name = 'AgPosit_real', mode = 'lines')])
 fig.show()
 fig.write_html("prediction.html")
+
+df_real2 = df[df['Datum'] > '2021-11-30']
+df_real2 = df_real2[df_real2['Datum'] <= '2021-12-07']
+rmse = sqrt(mean_squared_error(df_real2['AgPosit'], [float(i) for i in ['2440.9276650425995', '2451.0142106654635', '2472.3669651777345', '2476.426576545583', '2478.2253242881775', '2483.3577488107994', '2490.3414989838575']]))
+print(rmse)
