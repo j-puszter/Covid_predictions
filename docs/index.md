@@ -7,3 +7,5 @@ Na tejto stránke sa nachádzajú informácie o členoch tímu projektu predikci
 **Tomáš Singhofer** popri štúdiu pracuje na pozícii Java programátora vo firme Across. Hlavnou náplňou je vývoj intranetových aplikácií. Zameriava sa najmä na backend. Vo voľnom čase rád programuje a venuje sa skautingu.
 
 **Marek Kačmár** momentálne popri štúdiu nepracuje v žiadnej prestížnej firme. Preferuje prácu na backende a medzi jeho obľúbené programovacie jazyky patria PHP, JavaScript, Java a Python. Jeho hlavnými záľubami sú sledovanie seriálov, programovanie, pasívny gaming, cyklistika, čítanie kníh a beh.
+
+**Adam Vozár** už štvrtý rok popri škole pracuje v malej softvérovej firme na pozícii backend web developera. V práci vyvýja stredné a vačšie informačné systémy najmä v jazykoch PHP, JavaScript a SQL. Keď mu popri štúdiu a práci ostane čas, rád snowboarduje, sleduje F1 a hrá CS:GO.
