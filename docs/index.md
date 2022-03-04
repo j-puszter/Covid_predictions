@@ -9,3 +9,5 @@ Na tejto stránke sa nachádzajú informácie o členoch tímu projektu predikci
 **Marek Kačmár** momentálne popri štúdiu nepracuje v žiadnej prestížnej firme. Preferuje prácu na backende a medzi jeho obľúbené programovacie jazyky patria PHP, JavaScript, Java a Python. Jeho hlavnými záľubami sú sledovanie seriálov, programovanie, pasívny gaming, cyklistika, čítanie kníh a beh.
 
 **Adam Vozár** už štvrtý rok popri škole pracuje v malej softvérovej firme na pozícii backend web developera. V práci vyvýja stredné a vačšie informačné systémy najmä v jazykoch PHP, JavaScript a SQL. Keď mu popri štúdiu a práci ostane čas, rád snowboarduje, sleduje F1 a hrá CS:GO.
+
+**Viet Quoc Le** nepracuje v žiadnej firme. Vo voľnom čase sa venuje tvoreniu fullstack webstránok v jazyku JavaScript a vareniu jedál primárne ázijskej kuchyne. 
