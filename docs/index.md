@@ -11,3 +11,5 @@ Na tejto stránke sa nachádzajú informácie o členoch tímu projektu predikci
 **Adam Vozár** už štvrtý rok popri škole pracuje v malej softvérovej firme na pozícii backend web developera. V práci vyvýja stredné a vačšie informačné systémy najmä v jazykoch PHP, JavaScript a SQL. Keď mu popri štúdiu a práci ostane čas, rád snowboarduje, sleduje F1 a hrá CS:GO.
 
 **Viet Quoc Le** nepracuje v žiadnej firme. Vo voľnom čase sa venuje tvoreniu fullstack webstránok v jazyku JavaScript a vareniu jedál primárne ázijskej kuchyne. 
+
+**Branislav Šipula** študuje na FEI STU inžinierske štúdium aplikovanej informatiky a zároveň popri tom už tretí rok pracuje v malej softvérovej firme Plaut na pozicií ako junior backend developer. Pri práci vyvíja v programovacích jazykoch Java, TypeScript a zároveň pracuje s technológiami ako sú Spring, Spring Boot, Angular, TestNG. Medzi jeho záľuby patrí cestovanie, turistika ale aj sledovanie filmov a seriálov na Netflixe. No najradšej svoj voľný čas trávi zo svojou rodinou a kamarátmi.
