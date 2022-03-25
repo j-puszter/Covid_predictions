@@ -13,3 +13,5 @@ Na tejto stránke sa nachádzajú informácie o členoch tímu projektu predikci
 **Viet Quoc Le** nepracuje v žiadnej firme. Vo voľnom čase sa venuje tvoreniu fullstack webstránok v jazyku JavaScript a vareniu jedál primárne ázijskej kuchyne. 
 
 **Branislav Šipula** študuje na FEI STU inžinierske štúdium aplikovanej informatiky a zároveň popri tom už tretí rok pracuje v malej softvérovej firme Plaut na pozicií ako junior backend developer. Pri práci vyvíja v programovacích jazykoch Java, TypeScript a zároveň pracuje s technológiami ako sú Spring, Spring Boot, Angular, TestNG. Medzi jeho záľuby patrí cestovanie, turistika ale aj sledovanie filmov a seriálov na Netflixe. Svoj voľný čas najradšej trávi so svojou rodinou a kamarátmi.
+
+**Filip Frank** má s programovaním najmä akademické skúsenosti, je spoluautorom vedeckého článku o vývoji softvéru pre analýzu sekvenčných spektier gama žiarenia. V budúcnosti by chcel svoje zručnosti rozšíriť o vývoj a nasadzovanie aplikácii pomocou cloudových služieb, akou je Microsoft Azure.
