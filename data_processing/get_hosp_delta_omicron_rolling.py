@@ -24,10 +24,16 @@ df['PCR%'] = df.apply(lambda row: calculate_percentage(row["Dennych.PCR.prirastk
 df['Ag%'] = df.apply(lambda row: calculate_percentage(row["AgPosit"],
                                                       row["AgTests"]), axis=1)
 
+df['kumulativne_testy'] = df["AgPosit"] * 2.68 + df["Dennych.PCR.prirastkov"]
+df['celkovy_pocet_testovanych'] = df["AgTests"] * 2.68 + df["Dennych.PCR.testov"]
+
+df['kumulativne_testy%'] = df.apply(lambda row: calculate_percentage(row["kumulativne_testy"],
+                                                      row["celkovy_pocet_testovanych"]), axis=1)
+
 
 # Reorder the columns
 column_reindex = ["Datum", "Dennych.PCR.testov",
-                  "Dennych.PCR.prirastkov", "PCR%", "AgTests", "AgPosit", "Ag%"]
+                  "Dennych.PCR.prirastkov", "PCR%", "AgTests", "AgPosit", "Ag%", "kumulativne_testy", "kumulativne_testy%"]
 df = df.reindex(columns=column_reindex)
 
 # Drop rows before date_start
