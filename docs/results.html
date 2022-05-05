@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Predikcia COVID-19 - Tímový projekt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
@@ -23,148 +24,237 @@
         STU v Bratislave</p>
     </div>
   </header>
-  <nav class="bg-light">
-    <ul class="nav px-5 justify-content-center">
-      <li class="nav-item col-3 text-center">
-        <a class="nav-link text-success fw-bolder active" href="index.html">O projekte</a>
-      </li>
-      <li class="nav-item col-3 text-center">
-        <a class="nav-link text-success fw-bolder" href="methodology.html">Metodika</a>
-      </li>
-      <li class="nav-item col-3 text-center">
-        <a class="nav-link text-success fw-bolder" href="results.html">Výsledky</a>
-      </li>
-      <li class="nav-itemc col-3 text-center">
-        <a class="nav-link text-success fw-bolder" href="team.html">Členovia tímu</a>
-      </li>
-    </ul>
-    <nav>
-      <article class="bg-dark text-white">
-        <div class="container col-8 p-5">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item col-md-3 text-center">
+            <a class="nav-link text-success fw-bolder" href="index.html">O projekte</a>
+          </li>
+          <li class="nav-item col-md-3 text-center">
+            <a class="nav-link text-success fw-bolder" href="methodology.html">Metodika</a>
+          </li>
+          <li class="nav-item col-md-3 text-center">
+            <a class="nav-link text-success fw-bolder" href="results.html">Výsledky</a>
+          </li>
+          <li class="nav-item col-md-3 text-center">
+            <a class="nav-link text-success fw-bolder" href="team.html">Členovia tímu</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <article class="bg-dark text-white">
+    <div class="container col-sm-12 col-md-8 p-3">
 
-          <!-- Carousel -->
-          <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+      <section>
+
+        <h4 class="pt-4 pb-3 fw-bolder">Predikcia počtu hospitalizovaných z dát získanych počas vĺn delta a omikron</h4>
+        <div id="resultsPlot"></div>
+        <br>
+        <div>
+          <p>
+            Graf uvádza porovnanie najlepších výsledkov z predikcií oboch skupín.
+            Reálne aj predikované hodnoty z posledného dňa predikcie spolu s metrikou úspešnosti RMSE (čím nižšie, tým
+            lepšie) pre všetky natrénované modely obsahuje tabuľka:
+          </p>
+          <table class="table table-hover table-responsive table-bordered">
+            <thead>
+              <tr class="table-success text-center">
+                <th class="align-middle" scope="col" rowspan="2">Parametre</th>
+                <th class="align-middle" scope="col" rowspan="2">Reálna hodnota</th>
+                <th scope="col" colspan="2">Hodnota predikcie </th>
+                <th scope="col" colspan="2">RMSE</th>
+              </tr>
+              <tr class="table-success text-center">
+                <th scope="col">1.skupina</th>
+                <th scope="col">2.skupina</th>
+                <th scope="col">1.skupina</th>
+                <th scope="col">2.skupina</th>
+              </tr>
+            </thead>
+            <tbody class="table-light ">
+              <tr>
+                <td>Ag, Ag%, PCR, PCR%</td>
+                <td class="align-middle text-center" rowspan="4">2409</td>
+                <td>2496</td>
+                <td>2487</td>
+                <td>93.13</td>
+                <td>87.793</td>
+              </tr>
+              <tr class="text-success fw-bold">
+                <td>Ag%, PCR%</td>
+                <td>2425</td>
+                <td>2484</td>
+                <td>82.08</td>
+                <td>87.364</td>
+              </tr>
+              <tr>
+                <td>Ag, PCR</td>
+                <td>2501</td>
+                <td>2488</td>
+                <td>102.2</td>
+                <td>86.863</td>
+              </tr>
+
+              <tr>
+                <td>Kumulatívne, kumulatívne%</td>
+                <td>2495</td>
+                <td>2494</td>
+                <td>90.8</td>
+                <td>89.773</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Ako najlepšie výsledky sme
+            brali
+            predikcie, ktorých posledná predikovaná hodnota bola najbližšie k reálnym hodnotám. Červená krivka
+            znázorňuje predikcie,
+            pri ktorých bol model neurónovej siete trénovaný na dátach z dlhšieho časového intervalu a to od 01.09.2021
+            do
+            10.03.2022. Zelená krivka znázorňuje predikcie, pri ktorých bol model neurónovej siete trénovaný na dátach z
+            kratšieho
+            časového intervalu a to od 14.1.2022 do 10.3.2022. Modrá krivka znázorňuje reálne hodnoty. V trénovacích
+            dátach z
+            dlhšieho časového intervalu sa nachádzajú vzorky z varianty delty aj z omikronu, zatiaľ čo v dátach z
+            kratšieho časového
+            intervalu začali prevažovať vzorky z varianty omikronu. Predikované hodnoty sú pre dátumy od 11.3.2022 do
+            20.3.2022.
+          </p>
+          <p>
+            Z obrázku je možné vyčítať, že k reálnym hodnotám sme sa najviac priblížili pri predikciách z dlhšieho
+            časového
+            intervalu. Posledné dni predikcie sa červená krivka náhle priblíži k reálnym hodnotám, zatiaľ čo zelená
+            krivka sa
+            približuje pomaly. V oboch prípadoch sú naše najlepšie výsledky pre predikcie z parametrov Ag%, PCR%.
+            Posledná reálna
+            hodnota je 2409, predikovaná z kratšieho intervalu je 2484 a z dlhšieho je 2425. Výsledný najlepší model pre
+            obe
+            predikcie je Voting Ensemble.
+          </p>
+          <p>
+            Najhoršie výsledky predikcií pre dáta z krátkeho intervalu sú pre parametre kumulatívne testy, kumulatívne
+            testy%.
+            Hodnota poslednej predikcie je 2494. Najhoršie výsledky predikcií pre dáta z dlhšieho intervalu sú pre
+            parametre Ag,
+            PCR. Hodnota poslednej predikcie je 2501. Ako vidíme, najhoršia predikcia z dlhšieho intervalu, je horšia
+            ako najhoršia
+            predikcia z kratšieho intervalu.
+          </p>
+          <p>
+            Predikovať na dátach z dlhších časových intervalov má výhodu väčšieho množstva dát, na ktorých sú modely
+            trénované, čo
+            ma za dôsledok presnejšie výsledky. Predikcie na dátach z kratších časových intervalov má výhodu, že sa
+            dokážeme zamerať
+            na určité vlastnosti dát. V našom prípade sú to dáta, v ktorých prevažuje variant omikron.
+          </p>
+        </div>
+        <br>
+
+        <br>
+        <h4 class="pt-4 pb-3 fw-bolder">Prehľad výsledkov individuálnej práce - zimný semester</h4>
+        <p>Členovia tímu sa v rámci zimného semestra individuálne venovali zoznámeniu sa s datasetom IZA a prostredím
+          Microsoft
+          Azure.
+          Výsledkom ich práce bola predikcia a vizualizácia epidemiologických parametrov.</p>
+        <!-- Carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imgs/p1.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Predikcia pozitívnych PCR testov</h5>
+                <p>Dátove stĺpce použité pri trénovaní : počet pozitívnych PCR testov, percento pozitívnych PCR testov,
+                  počet pozitývnych Ag testov, percento pozitívnych Ag testov</p>
+                <p>RMSE : 4500.43</p>
+              </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://media.istockphoto.com/photos/bratislava-slovakia-picture-id857388110"
-                  class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://media.istockphoto.com/photos/bratislava-at-night-picture-id517664988"
-                  class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://media.istockphoto.com/photos/bratislava-cityscape-view-on-the-old-town-picture-id531913374"
-                  class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+            <div class="carousel-item">
+              <img src="imgs/p2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Predikcia pozitívnych Ag testov</h5>
+                <p>Dátove stĺpce použité pri trénovaní : počet pozitívnych PCR testov, percento pozitívnych PCR testov,
+                  počet pozitývnych Ag testov, percento pozitívnych Ag testov</p>
+                <p>RMSE : 378.22</p>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div> -->
-
-          <section>
-
-            <h4 class="pt-4 pb-3 fw-bolder">Výsledný graf</h4>
-            <div id="resultsPlot"></div>
-
-            <div>
-              <br>
-              <p>Najlepšie výsledky pri predikcií hospitalizácie oboch skupín sú vykreslené na grafe. Model s
-                najúspešnejšou predikcou bol v oboch prípadoch <strong>VotingEnsemble</strong>. </p>
-              <p>Predpoveď predikcií spočiatku boli veľmi podobné, zlom prišiel v modeli, ktorý predikoval z delty a
-                omikronu a to <strong>18.3.2022</strong>, kedy sa hodnoty priblížili ku skutočným údajom. Rozdiel medzi
-                nimi bol ~21.
+            <div class="carousel-item">
+              <img src="imgs/p3.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Predikcia úmrtí z viacerých ukazovateľov</h5>
+                <p>Dátove stĺpce použité pri trénovaní : počet úmrtí, počet pozitívnych PCR testov, percento pozitívnych
+                  PCR testov, počet pozitývnych
+                  Ag testov, percento pozitívnych Ag testov</p>
+                <p>RMSE : 40.68</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/p4.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Predikcia úmrtí z úmrtí</h5>
+                <p>Dátove stĺpce použité pri trénovaní : počet úmrtí</p>
+                <p>RMSE : 260.38</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/p5.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Predikcia kompletne zaočkovaných</h5>
+                <p>Dátove stĺpce použité pri trénovaní : počet kompletne zaočkovanyých osôb</p>
+                <p>RMSE : 24441.36</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/p6.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Graf časového vývoja počtu hospitalizovaných osôb s ochorením COVID-19</h5>
                 <br>
-                Na druhej strane rozdiel medzi skutočnými údajmi a predikciou, ktorá predikovala z omikronu, bol až ~80.
-              </p>
+              </div>
             </div>
-
-            <table class="table table-hover table-responsive table-bordered">
-              <thead>
-                <tr class="table-success text-center">
-                  <th class="align-middle" scope="col" rowspan="2">Parametre</th>
-                  <th class="align-middle" scope="col" rowspan="2">Reálna hodnota</th>
-                  <th scope="col" colspan="2">Hodnota predikcie </th>
-                  <th scope="col" colspan="2">RMSE</th>
-                </tr>
-                <tr class="table-success text-center">
-                  <th scope="col">1.skupina</th>
-                  <th scope="col">2.skupina</th>
-                  <th scope="col">1.skupina</th>
-                  <th scope="col">2.skupina</th>
-                </tr>
-              </thead>
-              <tbody class="table-light ">
-                <tr>
-                  <td>Ag, Ag%, PCR, PCR%</td>
-                  <td class="align-middle text-center" rowspan="4">2409</td>
-                  <td>2496</td>
-                  <td>2487</td>
-                  <td>93.13</td>
-                  <td>87.793</td>
-                </tr>
-                <tr class="text-success fw-bold">
-                  <td>Ag%, PCR%</td>
-                  <td>2425</td>
-                  <td>2484</td>
-                  <td>82.08</td>
-                  <td>87.364</td>
-                </tr>
-                <tr>
-                  <td>Ag, PCR</td>
-                  <td>2501</td>
-                  <td>2488</td>
-                  <td>102.2</td>
-                  <td>86.863</td>
-                </tr>
-
-                <tr>
-                  <td>Kumulatívne, kumulatívne%</td>
-                  <td>2495</td>
-                  <td>2494</td>
-                  <td>90.8</td>
-                  <td>89.773</td>
-                </tr>
-              </tbody>
-            </table>
-
-          </section>
-
+            <div class="carousel-item">
+              <img src="imgs/p7.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption move-caption-down d-none d-md-block">
+                <h5>Graf časového vývoja počtu pacientov na umelej pľúcnej ventilácií</h5>
+                <br>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
 
-      </article>
 
-      <script src="./js/data/results.js"></script>
-      <script src="./js/resultsPlot.js"></script>
+      </section>
+      <br><br>
+    </div>
+
+  </article>
+
+  <script src="./js/data/results.js"></script>
+  <script src="./js/resultsPlot.js"></script>
 
 </body>
 
