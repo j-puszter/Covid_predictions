@@ -1,8 +1,8 @@
 let { date, observed, prediction1, prediction2 } = plotData;
 
 // Get only 40 days data from datasets
-date = date.slice(-40);
-observed = observed.slice(-40);
+date = date.slice(-30);
+observed = observed.slice(-30);
 
 console.log(date);
 
@@ -36,9 +36,13 @@ var tracePrediction2 = {
 var data = [traceTrue, tracePrediction1, tracePrediction2];
 
 var layout = {
-    title: "Najlepšie predikcie",
-    xaxis_title: "Dátum",
-    yaxis_title: "Hospitalizovaní",
+    title: "Predikcia počtu hospitalizovaných z parametrov Ag% a PCR%",
+    xaxis: {
+        title: "Dátum",
+    },
+    yaxis: {
+        title: "Hospitalizovaní",
+    },
 };
 
-Plotly.newPlot("resultsPlot", data, layout);
+Plotly.newPlot("resultsPlot", data, layout, { responsive: true });
