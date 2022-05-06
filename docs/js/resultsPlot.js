@@ -16,21 +16,21 @@ var traceTrue = {
     x: date,
     y: observed,
     mode: "lines",
-    name: "True",
+    name: "Reálny počet hospitalizovaných",
 };
 
 var tracePrediction1 = {
     x: datesPrediction,
     y: prediction1,
     mode: "lines",
-    name: "Predikcia dát z delty a omikronu",
+    name: "Predikcia počtu hospitalizovaných - skupina I",
 };
 
 var tracePrediction2 = {
     x: datesPrediction,
     y: prediction2,
     mode: "lines",
-    name: "Predikcia dát prevažne z omikronu",
+    name: "Predikcia počtu hospitalizovaných - skupina II",
 };
 
 var data = [traceTrue, tracePrediction1, tracePrediction2];
