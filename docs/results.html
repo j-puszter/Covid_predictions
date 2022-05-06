@@ -54,15 +54,28 @@
       <section>
 
         <h4 class="pt-4 pb-3 fw-bolder">Predikcia počtu hospitalizovaných z dát získanych počas vĺn delta a omikron</h4>
-        <h5>Rozdelenie úloh</h5>
-        <p>- úlohou oboch skupín bolo natrénovať predikčné modely v prostredí Microsoft Azure ML Studio</p>
-        <p><strong>1. skupina</strong></p>
-        <p></p>
         <div id="resultsPlot"></div>
         <br>
         <div>
+          <p class="spread">
+            Graf uvádza najúspešnejšie predikcie počtu hospitalizovaných pacientov s ochorením COVID-19 s využitím dát zozbieraných počas vĺn delta a omikron. Červená krivka predstavuje predikciu vypracovanú skupinou I, zelená krivka predikciu vypracovanú skupinou II.</p>
           <p>
-            Graf uvádza porovnanie najlepších výsledkov z predikcií oboch skupín.
+            <p>Špecifikácia:</p>
+              <ul>
+                <li>Vstupné dáta: percento pozitívnych PCR testov, percento pozitívnych Ag testov (aplikovaný 7-dňový kĺzavý priemer)</li>
+                <li>Najúspešnejší model: VotingEnsemble (obe skupiny)</li>
+                <li>Časový interval zberu trénovacích dát:
+                    <ul>
+                        <li>
+                            Skupina I: 01.09.2021 - 10.03.2022 (delta a omikron)
+                        </li>
+                        <li>
+                            Skupina II: 14.1.2022 - 10.3.2022 (najmä omikron)
+                        </li>
+                    </ul>
+                </li>
+                <li>Predikčný interval (obe skupiny): 11.3.2022 - 20.3.2022</li>
+            </ul>
             Reálne aj predikované hodnoty z posledného dňa predikcie spolu s metrikou úspešnosti RMSE (čím nižšie, tým
             lepšie) pre všetky natrénované modely obsahuje tabuľka:
           </p>
@@ -131,7 +144,7 @@
             20.3.2022.
           </p>
           <p>
-            Z obrázku je možné vyčítať, že k reálnym hodnotám sme sa najviac priblížili pri predikciách z dlhšieho
+            K reálnym hodnotám sme sa najviac priblížili pri predikciách z dlhšieho
             časového
             intervalu. Posledné dni predikcie sa červená krivka náhle priblíži k reálnym hodnotám, zatiaľ čo zelená
             krivka sa
@@ -146,7 +159,7 @@
             testy%.
             Hodnota poslednej predikcie je 2494. Najhoršie výsledky predikcií pre dáta z dlhšieho intervalu sú pre
             parametre Ag,
-            PCR. Hodnota poslednej predikcie je 2501. Ako vidíme, najhoršia predikcia z dlhšieho intervalu, je horšia
+            PCR. Hodnota poslednej predikcie je 2501. Najhoršia predikcia z dlhšieho intervalu, je horšia
             ako najhoršia
             predikcia z kratšieho intervalu.
           </p>
@@ -162,10 +175,10 @@
 
         <br>
         <h4 class="pt-4 pb-3 fw-bolder">Prehľad výsledkov individuálnej práce - zimný semester</h4>
-        <p>Členovia tímu sa v rámci zimného semestra individuálne venovali zoznámeniu sa s datasetom IZA a prostredím
+        <p>Členovia tímu sa v rámci zimného semestra zoznamovali sa s datasetom IZA a prostredím
           Microsoft
           Azure.
-          Výsledkom ich práce bola predikcia a vizualizácia epidemiologických parametrov.</p>
+          Výsledkom ich práce boli jednoduché predikcie a vizualizácie epidemiologických parametrov.</p>
         <!-- Carousel -->
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -182,7 +195,7 @@
             <div class="carousel-item active">
               <img src="imgs/p1.png" class="d-block w-100" alt="...">
               <div class="carousel-caption move-caption-down d-none d-md-block">
-                <h5>Predikcia pozitívnych PCR testov</h5>
+                <h5>Predikcia pozitívnych PCR testov, vypracoval Filip Frank</h5>
                 <p>Dátove stĺpce použité pri trénovaní : počet pozitívnych PCR testov, percento pozitívnych PCR testov,
                   počet pozitývnych Ag testov, percento pozitívnych Ag testov</p>
                 <p>RMSE : 4500.43</p>
@@ -191,7 +204,7 @@
             <div class="carousel-item">
               <img src="imgs/p2.png" class="d-block w-100" alt="...">
               <div class="carousel-caption move-caption-down d-none d-md-block">
-                <h5>Predikcia pozitívnych Ag testov</h5>
+                <h5>Predikcia pozitívnych Ag testov, vypracoval Juraj Puszter</h5>
                 <p>Dátove stĺpce použité pri trénovaní : počet pozitívnych PCR testov, percento pozitívnych PCR testov,
                   počet pozitývnych Ag testov, percento pozitívnych Ag testov</p>
                 <p>RMSE : 378.22</p>
@@ -200,7 +213,7 @@
             <div class="carousel-item">
               <img src="imgs/p3.png" class="d-block w-100" alt="...">
               <div class="carousel-caption move-caption-down d-none d-md-block">
-                <h5>Predikcia úmrtí z viacerých ukazovateľov</h5>
+                <h5>Predikcia úmrtí z viacerých ukazovateľov, vypracoval Viet Le Quoc</h5>
                 <p>Dátove stĺpce použité pri trénovaní : počet úmrtí, počet pozitívnych PCR testov, percento pozitívnych
                   PCR testov, počet pozitývnych
                   Ag testov, percento pozitívnych Ag testov</p>
@@ -210,7 +223,7 @@
             <div class="carousel-item">
               <img src="imgs/p4.png" class="d-block w-100" alt="...">
               <div class="carousel-caption move-caption-down d-none d-md-block">
-                <h5>Predikcia úmrtí z úmrtí</h5>
+                <h5>Predikcia úmrtí z úmrtí, vypracoval Tomáš Singhofer</h5>
                 <p>Dátove stĺpce použité pri trénovaní : počet úmrtí</p>
                 <p>RMSE : 260.38</p>
               </div>
@@ -218,7 +231,7 @@
             <div class="carousel-item">
               <img src="imgs/p5.png" class="d-block w-100" alt="...">
               <div class="carousel-caption move-caption-down d-none d-md-block">
-                <h5>Predikcia kompletne zaočkovaných</h5>
+                <h5>Predikcia kompletne zaočkovaných, vypracoval Marek Kačmár</h5>
                 <p>Dátove stĺpce použité pri trénovaní : počet kompletne zaočkovanyých osôb</p>
                 <p>RMSE : 24441.36</p>
               </div>
