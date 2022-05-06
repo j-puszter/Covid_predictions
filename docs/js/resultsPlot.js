@@ -24,6 +24,9 @@ var tracePrediction1 = {
     y: prediction1,
     mode: "lines",
     name: "Predikcia počtu hospitalizovaných - skupina I",
+    line: {
+        color: "red"
+    }
 };
 
 var tracePrediction2 = {
