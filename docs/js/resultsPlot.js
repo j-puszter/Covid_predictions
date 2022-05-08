@@ -23,7 +23,7 @@ var tracePrediction1 = {
     x: datesPrediction,
     y: prediction1,
     mode: "lines",
-    name: "Predikcia počtu hospitalizovaných - skupina I",
+    name: "Predikcia počtu hospitalizovaných z parametrov Ag% a PCR%",
     line: {
         color: "red"
     }
@@ -33,13 +33,13 @@ var tracePrediction2 = {
     x: datesPrediction,
     y: prediction2,
     mode: "lines",
-    name: "Predikcia počtu hospitalizovaných - skupina II",
+    name: "Predikcia počtu hospitalizovaných z parametrov Ag a PCR",
 };
 
 var data = [traceTrue, tracePrediction1, tracePrediction2];
 
 var layout = {
-    title: "Predikcia počtu hospitalizovaných z parametrov Ag% a PCR%",
+    title: "Najúspešnejšie predikcie počtu hospitalizovaných podľa RMSE",
     xaxis: {
         title: "Dátum",
     },
