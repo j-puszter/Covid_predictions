@@ -62,7 +62,16 @@
           <p>
             <p>Špecifikácia:</p>
               <ul>
-                <li>Vstupné dáta: percento pozitívnych PCR testov, percento pozitívnych Ag testov (aplikovaný 7-dňový kĺzavý priemer)</li>
+                <li>Vstupné dáta (na trénovacie dáta bol aplikovaný 7-dňový kĺzavý priemer):
+		    <ul>
+                        <li>
+                            Skupina I: denné percento pozitívnych PCR testov, denné percento pozitívnych Ag testov
+                        </li>
+                        <li>
+                            Skupina II: denný počet pozitívnych PCR testov, denný počet pozitívnych Ag testov
+                        </li>
+                    </ul>
+		</li>
                 <li>Najúspešnejší model: VotingEnsemble (obe skupiny)</li>
                 <li>Časový interval zberu trénovacích dát:
                     <ul>
@@ -127,18 +136,18 @@
               </tr>
             </tbody>
           </table>
-          <p>
-			Ako najlepšie výsledky sme brali predikcie, pri ktorých vyšlo najmenšie RMSE.
-			Červená krivka znázorňuje predikcie, pri ktorých bol model neurónovej siete trénovaný na dátach z dlhšieho
-			časového intervalu a to od 01.09.2021 do 10.03.2022.
-			Zelená krivka znázorňuje predikcie, pri ktorých bol model neurónovej siete trénovaný na dátach z kratšieho
-			časového intervalu a to od 14.1.2022 do 10.3.2022.
+          <p class="spread">
+			Ako najlepšie výsledky boli brané predikcie s najmenším výsledným RMSE.
+			Červená krivka znázorňuje predikcie, pri ktorých bol modely strojového učenia trénované na dátach z dlhšieho
+			časového intervalu, od 01.09.2021 do 10.03.2022.
+			Zelená krivka znázorňuje predikcie z kratšieho
+			časového intervalu, od 14.1.2022 do 10.3.2022.
 			Modrá krivka znázorňuje reálne hodnoty. V trénovacích dátach z dlhšieho časového intervalu sa nachádzajú
 			vzorky z varianty delty aj z omikronu,
 			zatiaľ čo v dátach z kratšieho časového intervalu začali prevažovať vzorky z varianty omikronu.
 			Predikované hodnoty sú pre dátumy od 11.3.2022 do 20.3.2022.
           </p>
-          <p>
+          <p class="spread">
 			K reálnym hodnotám sme sa najviac priblížili pri predikciách z dlhšieho časového intervalu.
 			Posledné dni predikcie sa červená krivka náhle priblíži k reálnym hodnotám, zatiaľ čo zelená krivka sa približuje pomaly.
 			Pri predikcii z dlhého intervalu sú naše najlepšie výsledky z parametrov Ag%, PCR%.
@@ -146,17 +155,18 @@
 			Posledná reálna hodnota je 2409, predikovaná z kratšieho intervalu je 2488 a z dlhšieho je 2425.
 			Výsledný najlepší model pre obe predikcie je Voting Ensemble.
           </p>
-          <p>
-			Najhoršie výsledky predikcií pre dáta z krátkeho intervalu sú pre parametre kumulatívne testy, kumulatívne testy%.
+          <p class="spread">
+			Najhoršie výsledky predikcií pre dáta z krátkeho intervalu sú pre parametre kumulatívne testy, kumulatívne testy% - ide o sumy pozitívnych
+		  	testov .
 			Hodnota poslednej predikcie je 2494. Najhoršie výsledky predikcií pre dáta z dlhšieho intervalu sú pre parametre Ag, PCR.
 			Hodnota poslednej predikcie je 2501.
 			Ako vidíme, najhoršia predikcia z dlhšieho intervalu, je horšia ako najhoršia predikcia z kratšieho intervalu.
           </p>
-          <p>
+          <p class="spread">
 			Predikovať na dátach z dlhších časových intervalov má výhodu väčšieho množstva dát na ktorých sú modely trénované,
 			čo ma za dôsledok presnejšie výsledky.
-			Predikcie na dátach z kratších časových intervalov majú výhodu, že sa dokážeme zamerať na určité vlastnosti dát.
-			V našom konkrétnom prípade kratšieho časového intervalu prevažuje vo vzorkách variant omikron.
+			Predikcie na dátach z kratších časových intervalov majú výhodu, že sa dokážeme zamerať na určité vlastnosti dát, v našom prípade ide o
+		  	zameranie sa na variant omikron.
           </p>
         </div>
         <br>
